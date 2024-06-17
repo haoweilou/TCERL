@@ -30,3 +30,4 @@ edge = critical_edge(x,y,t,self_loop=self_loop)
 * Start Training
 `python run.py`
 
+## Citation
