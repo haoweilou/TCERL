@@ -6,3 +6,27 @@ This repository is the official PyTorch implementation of the GNC paper:Transfer
 **Method**: We first crop raw EEG signal into a sequence of the temporal slice using the slide window technique; adopt 1D-CNN to extract temporal features and the self-attentive module to search the most discriminative temporal slice; then we combine nodes in temporal embedding with functional connectivity to generate the graph representation of bain network; select three layer of graph neural network (GNN) to extract topological features and lastly the extracted topological features are classified to different motion intention using a fully connected network with softmax activation function.
 
 ![Architecature diagram](/fig/overview.png)
+
+## Dataset
+* For EEGMMIDB, download the dataset from [Physionet](https://physionet.org/content/eegmmidb/1.0.0/) and unzip the download file into `dataset` directory or modify the path in `getEEGMMIDB` function in `dataset.py`
+* For custom dataset, process the dataset containing EEG signals in the shape [M,N,K] and corresponding label. Then, follow the EEGMMIDB example to prepare the PyTorch dataset.
+
+## Environment
+* Python - 3.11.9
+* Pytorch - 2.3.1
+
+`pip install -r requirements.txt`
+
+## Training
+* Critical Edge formation
+
+```
+x = EEGSIGNAL
+y = label
+t = selection ratio
+edge = critical_edge(x,y,t,self_loop=self_loop)
+```
+
+* Start Training
+`python run.py`
+
