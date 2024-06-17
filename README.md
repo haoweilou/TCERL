@@ -5,4 +5,4 @@ This repository is the official PyTorch implementation of the GNC paper:Transfer
 
 **Method**: We first crop raw EEG signal into a sequence of the temporal slice using the slide window technique; adopt 1D-CNN to extract temporal features and the self-attentive module to search the most discriminative temporal slice; then we combine nodes in temporal embedding with functional connectivity to generate the graph representation of bain network; select three layer of graph neural network (GNN) to extract topological features and lastly the extracted topological features are classified to different motion intention using a fully connected network with softmax activation function.
 
-![Architecature diagram](/assets/images/electrocat.png)
+![Architecature diagram](/fig/overview.png)
